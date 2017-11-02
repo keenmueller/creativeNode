@@ -13,14 +13,15 @@
 
 
     <script>
+      var setupArray = [];
+      var punchArray = [];
+
         var getJoke = function () {
           $.ajax({
             url : "joke",
             dataType : "json",
             success : function(parsed_json){
               console.log(parsed_json)
-              var setupArray = [];
-              var punchArray = [];
 
               for(var i = 0; i < parsed_json.length; i++){
                 var setup = parsed_json[i].setup;
@@ -34,21 +35,18 @@
           })
             //document.getElementById("setup").innerText="I want to be a joke someday.";
             document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
-
-            var getPunchline = function () {
-                document.getElementById("punchline").innerText=punchArray[0];
-                document.getElementById("new-joke").innerHTML="<button onclick='getNewJoke()'>New Joke</button>";
-            };
-
-            var getNewJoke = function () {
-                document.getElementById("setup").innerText="Okay, that one was bad.";
-                document.getElementById("punchline").innerText="";
-                document.getElementById("new-joke").innerHTML="";
-            }
-
         };
 
+        var getPunchline = function () {
+            document.getElementById("punchline").innerText="I just hope I'm funny.";
+            document.getElementById("new-joke").innerHTML="<button onclick='getNewJoke()'>New Joke</button>";
+        };
 
+        var getNewJoke = function () {
+            document.getElementById("setup").innerText="Okay, that one was bad.";
+            document.getElementById("punchline").innerText="";
+            document.getElementById("new-joke").innerHTML="";
+        }
     </script>
 </head>
 <body>
