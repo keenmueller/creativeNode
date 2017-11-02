@@ -1,31 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
-<script src="javascripts/app.js"></script>
-<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-  <meta charset="utf-8">
-  <title>Node api tutorial</title>
+    <meta charset="UTF-8">
+    <title>Joke Generator</title>
+    <link type="text/css" rel="stylesheet" href="stylesheets/main.css">
+    <script>
+        var getJoke = function () {
+            document.getElementById("setup").innerText="I want to be a joke someday.";
+            document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
+        };
+
+        var getPunchline = function () {
+            document.getElementById("punchline").innerText="I just hope I'm funny.";
+            document.getElementById("new-joke").innerHTML="<button onclick='getNewJoke()'>New Joke</button>";
+        };
+
+        var getNewJoke = function () {
+            document.getElementById("setup").innerText="Okay, that one was bad.";
+            document.getElementById("punchline").innerText="";
+            document.getElementById("new-joke").innerHTML="";
+        }
+    </script>
 </head>
 <body>
 
-  <div id='app' ng-app='app' ng-controller='mainCtrl'>
+    <img id="doggy" src="https://www.omfgdogs.com/omfgdogs.gif"/>
+    <div id="header">
+        <h1>Joke Generator</h1>
+    </div>
 
-    <ul ng-if='pokemon.length' class='list center stretch'>
-      <li ng-repeat='p in pokemon' class='pokemon'>
-        <h1>{{ p.name }}</h1>
-        <h2>{{p.avatarUrl}}</h2>
-      </li>
-    </ul>
+    <button id="joke-button" onclick="getJoke()">Get Joke</button>
 
-    <h1> Enter A New Joke (Keep it clean)</h1>
-    <form id="newPoki" ng-submit="addPoki()">
-      Set up: <input type="text" ng-model="Name" value=""><br>
-      Punch Line: <input type="text" ng-model="Url" value=""><br>
-      <input type="submit" value="Submit">
-    </form>
+    <div>
+        <h1 id="setup"></h1>
+        <div id="punch-button"></div>
+        <h2 id="punchline"></h2>
+    </div>
 
-  </div>
-
+    <div id="new-joke"></div>
 </body>
 </html>

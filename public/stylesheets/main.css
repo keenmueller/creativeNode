@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+#doggy {
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+}
+
+#header {
+    border: outset 10px lightgray;
+    margin: 15px;
+}

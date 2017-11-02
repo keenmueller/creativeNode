@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request')
 
-var pokemon = [
+var jokes = [
   {
     name: 'What has 4 letters, sometimes 9 letters, but never has 5 letters.',
     avatarUrl: 'Just a hint: I didn\'t ask a question.'
