@@ -32,10 +32,7 @@
                               punchArray.push(punchLine);
                             }
 
-                            $("#setup").text=setupArray[0];
-                            $("#punch-button").html="<button onclick='getPunchline()'>Get Punchline</button>"
-
-                            //$("#searchResults").html(everything);
+                            $("#searchResults").html(everything);
                         }
                     });
                 });
@@ -43,6 +40,29 @@
 
 
     <script>
+        var getJoke = function () {
+          $.ajax({
+            url : "joke",
+            dataType : "json",
+            success : function(parsed_json){
+              console.log(parsed_json)
+              var setupArray = [];
+              var punchArray = [];
+
+              for(var i = 0; i < parsed_json.length; i++){
+                var setup = parsed_json[i].setup;
+                var punchLine = parsed_json[i].punchLine;
+
+                setupArray.push(setup);
+                punchArray.push(punchLine);
+              }
+              document.getElementById("setup").innerText=setupArray[0];
+            }
+          })
+            //document.getElementById("setup").innerText="I want to be a joke someday.";
+            document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
+        };
+
         var getPunchline = function () {
             document.getElementById("punchline").innerText="I just hope I'm funny.";
             document.getElementById("new-joke").innerHTML="<button onclick='getNewJoke()'>New Joke</button>";
@@ -62,7 +82,7 @@
         <h1>Joke Generator</h1>
     </div>
 
-    <button id="joke-button" type="submit">Get Joke</button>
+    <button id="joke-button" onclick="getJoke()">Get Joke</button>
 
     <div>
         <h1 id="setup"></h1>
