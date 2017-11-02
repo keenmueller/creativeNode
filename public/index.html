@@ -15,6 +15,7 @@
     <script>
       var setupArray = [];
       var punchArray = [];
+      var jokeLocation;
 
         var getJoke = function () {
           $.ajax({
@@ -30,15 +31,18 @@
                 setupArray.push(setup);
                 punchArray.push(punchLine);
               }
-              document.getElementById("setup").innerText=setupArray[0];
+
             }
           })
-            //document.getElementById("setup").innerText="I want to be a joke someday.";
-            document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
         };
 
+        var loadJoke = function(){
+          document.getElementById("setup").innerText=setupArray[0];
+          document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
+        }
+
         var getPunchline = function () {
-            document.getElementById("punchline").innerText="I just hope I'm funny.";
+            document.getElementById("punchline").innerText=punchArray[0];
             document.getElementById("new-joke").innerHTML="<button onclick='getNewJoke()'>New Joke</button>";
         };
 
