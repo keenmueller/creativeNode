@@ -4,29 +4,29 @@ var request = require('request')
 
 var pokemon = [
   {
-    name: 'Pikachu',
-    avatarUrl: 'http://rs795.pbsrc.com/albums/yy232/PixKaruumi/Pokemon%20Pixels/Pikachu_Icon__free__by_Aminako.gif~c200'
+    name: 'What has 4 letters, sometimes 9 letters, but never has 5 letters.',
+    avatarUrl: 'Just a hint: I didn\'t ask a question.'
   },
   {
-    name: 'Charmander',
-    avatarUrl: 'http://24.media.tumblr.com/tumblr_ma0tijLFPg1rfjowdo1_500.gif'
+    name: 'What do you call a book club that\'s been stuck on one book for years?',
+    avatarUrl: 'Church.'
 
   },
   {
-    name: 'Mew',
-    avatarUrl: 'http://media3.giphy.com/media/J5JrPT8r1xGda/giphy.gif'
+    name: 'Three conspiracy theorists walk into a bar',
+    avatarUrl: 'You can't tell me that's just a coincidence.'
   },
   {
-    name: 'Cubone',
-    avatarUrl: 'http://rs1169.pbsrc.com/albums/r511/nthndo/tumblr_ljsx6dPMNm1qii50go1_400.gif~c200'
+    name: 'I invited my girlfriend to go to the gym with me and then I didn’t show.',
+    avatarUrl: 'I hope she gets the message that we\'re not working out.'
   },
   {
-    name: 'Cleffa',
-    avatarUrl: 'http://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif'
+    name: 'The Only Thing Flat-Earthers Fear.....',
+    avatarUrl: 'Is Sphere Itself.'
   },
   {
-    name: 'Gengar',
-    avatarUrl: 'https://s-media-cache-ak0.pinimg.com/originals/7e/3b/67/7e3b67c53469cc4302035be70a7f2d60.gif'
+    name: 'Why is Peter Pan always flying?',
+    avatarUrl: 'He neverlands.'
   }
 ];
 
@@ -51,6 +51,6 @@ router.post('/pokemon', function(req, res) {
     console.log(req.body);
     pokemon.push(req.body);
     res.end('{"success" : "Updated Successfully", "status" : 200}');
-}); 
+});
 
 module.exports = router;
