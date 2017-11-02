@@ -32,10 +32,10 @@
                               punchArray.push(punchLine);
                             }
 
-                            document.getElementById("setup").innerText=setupArray[0];
-                            document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
+                            $("setup").text=setupArray[0];
+                            $("punch-button").html="<button onclick='getPunchline()'>Get Punchline</button>"
 
-                            $("#searchResults").html(everything);
+                            //$("#searchResults").html(everything);
                         }
                     });
                 });
@@ -62,7 +62,7 @@
         <h1>Joke Generator</h1>
     </div>
 
-    <button id="joke-button" onclick="submit">Get Joke</button>
+    <button id="joke-button" type="submit">Get Joke</button>
 
     <div>
         <h1 id="setup"></h1>
