@@ -39,6 +39,7 @@
         };
 
         var loadJoke = function(){
+          document.getElementById("getJoke-button").innerHTML="";
           document.getElementById("setup").innerText=setupArray[jokeLocation];
           document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
         }
@@ -66,7 +67,9 @@
         <h1>Joke Generator</h1>
     </div>
 
-    <button id="joke-button" onclick="getJoke()">Get Joke</button>
+    <div id="getJoke-button">
+      <button id="joke-button" onclick="getJoke()">Get Joke</button>
+    </div>
 
     <div>
         <h1 id="setup"></h1>
