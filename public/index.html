@@ -4,12 +4,45 @@
     <meta charset="UTF-8">
     <title>Joke Generator</title>
     <link type="text/css" rel="stylesheet" href="stylesheets/main.css">
-    <script>
-        var getJoke = function () {
-            document.getElementById("setup").innerText="I want to be a joke someday.";
-            document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
-        };
 
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+
+    <script>
+    $("#joke-button").click(function(e){
+                    e.preventDefault();
+                    var myurl = "joke";
+                    console.log(myurl);
+                    $.ajax({
+                        url : myurl,
+                        dataType : "json",
+                        success : function(parsed_json) {
+                            console.log(parsed_json)
+                            var setupArray = [];
+                            var punchArray = [];
+
+                            for(var i = 0; i < parsed_json.length; i++){
+                              var setup = parsed_json[i].setup;
+                              var punchLine = parsed_json[i].punchLine;
+
+                              setupArray.push(setup);
+                              punchArray.push(punchLine);
+                            }
+
+                            document.getElementById("setup").innerText=setupArray[0];
+                            document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
+
+                            $("#searchResults").html(everything);
+                        }
+                    });
+                });
+    </script>
+
+
+    <script>
         var getPunchline = function () {
             document.getElementById("punchline").innerText="I just hope I'm funny.";
             document.getElementById("new-joke").innerHTML="<button onclick='getNewJoke()'>New Joke</button>";
@@ -29,7 +62,7 @@
         <h1>Joke Generator</h1>
     </div>
 
-    <button id="joke-button" onclick="getJoke()">Get Joke</button>
+    <button id="joke-button" onclick="submit">Get Joke</button>
 
     <div>
         <h1 id="setup"></h1>
