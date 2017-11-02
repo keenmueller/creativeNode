@@ -15,7 +15,8 @@
     <script>
       var setupArray = [];
       var punchArray = [];
-      var jokeLocation;
+      var jokeLocation = 0;
+      var maxSize = 0;
 
         var getJoke = function () {
           $.ajax({
@@ -31,25 +32,30 @@
                 setupArray.push(setup);
                 punchArray.push(punchLine);
               }
+              maxSize = parsed_json.length;
               loadJoke();
             }
           })
         };
 
         var loadJoke = function(){
-          document.getElementById("setup").innerText=setupArray[0];
+          document.getElementById("setup").innerText=setupArray[jokeLocation];
           document.getElementById("punch-button").innerHTML="<button onclick='getPunchline()'>Get Punchline</button>"
         }
 
         var getPunchline = function () {
-            document.getElementById("punchline").innerText=punchArray[0];
+            document.getElementById("punchline").innerText=punchArray[jokeLocation];
             document.getElementById("new-joke").innerHTML="<button onclick='getNewJoke()'>New Joke</button>";
         };
 
         var getNewJoke = function () {
-            document.getElementById("setup").innerText="Okay, that one was bad.";
+            jokeLocation++;
+            if (jokeLocation == maxSize){
+              jokeLocation = 0;
+            }
             document.getElementById("punchline").innerText="";
             document.getElementById("new-joke").innerHTML="";
+            loadJoke();
         }
     </script>
 </head>
