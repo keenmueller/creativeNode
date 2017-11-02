@@ -16,6 +16,14 @@ var jokes = [
     punchLine: 'You can\'t tell me that\'s just a coincidence.'
   },
   {
+    setup: 'I walked down a street where the houses were numbered 64K, 128K, 256K, 512K and 1MB',
+    punchLine: 'That was a trip down memory lane.'
+  },
+  {
+    setup: 'My wife gets upset when I steal her kitchen utensils...',
+    punchLine: 'But it\'s a whisk I\'m willing to take.'
+  },
+  {
     setup: 'I invited my girlfriend to go to the gym with me and then I didn’t show.',
     punchLine: 'I hope she gets the message that we\'re not working out.'
   },
