@@ -11,19 +11,19 @@
 
   <div id='app' ng-app='app' ng-controller='mainCtrl'>
 
-   <h1> Enter A New Joke</h1>
-   <form id="newPoki" ng-submit="addPoki()">
-     Set up: <input type="text" ng-model="Name" value=""><br>
-     Punch Line: <input type="text" ng-model="Url" value=""><br>
-     <input type="submit" value="Submit">
-   </form>
-
     <ul ng-if='pokemon.length' class='list center stretch'>
       <li ng-repeat='p in pokemon' class='pokemon'>
         <h1>{{ p.name }}</h1>
         <h2>{{p.avatarUrl}}</h2>
       </li>
     </ul>
+
+    <h1> Enter A New Joke (Keep it clean)</h1>
+    <form id="newPoki" ng-submit="addPoki()">
+      Set up: <input type="text" ng-model="Name" value=""><br>
+      Punch Line: <input type="text" ng-model="Url" value=""><br>
+      <input type="submit" value="Submit">
+    </form>
 
   </div>
 
