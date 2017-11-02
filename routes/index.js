@@ -14,7 +14,7 @@ var pokemon = [
   },
   {
     name: 'Three conspiracy theorists walk into a bar',
-    avatarUrl: 'You can't tell me that's just a coincidence.'
+    avatarUrl: 'You can\'t tell me that\'s just a coincidence.'
   },
   {
     name: 'I invited my girlfriend to go to the gym with me and then I didn’t show.',
