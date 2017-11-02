@@ -4,29 +4,29 @@ var request = require('request')
 
 var jokes = [
   {
-    name: 'What has 4 letters, sometimes 9 letters, but never has 5 letters.',
-    avatarUrl: 'Just a hint: I didn\'t ask a question.'
+    setup: 'What has 4 letters, sometimes 9 letters, but never has 5 letters.',
+    punchLine: 'Just a hint: I didn\'t ask a question.'
   },
   {
-    name: 'What do you call a book club that\'s been stuck on one book for years?',
-    avatarUrl: 'Church.'
+    setup: 'What do you call a book club that\'s been stuck on one book for years?',
+    punchLine: 'Church.'
 
   },
   {
-    name: 'Three conspiracy theorists walk into a bar',
-    avatarUrl: 'You can\'t tell me that\'s just a coincidence.'
+    setup: 'Three conspiracy theorists walk into a bar',
+    punchLine: 'You can\'t tell me that\'s just a coincidence.'
   },
   {
-    name: 'I invited my girlfriend to go to the gym with me and then I didn’t show.',
-    avatarUrl: 'I hope she gets the message that we\'re not working out.'
+    setup: 'I invited my girlfriend to go to the gym with me and then I didn’t show.',
+    punchLine: 'I hope she gets the message that we\'re not working out.'
   },
   {
-    name: 'The Only Thing Flat-Earthers Fear.....',
-    avatarUrl: 'Is Sphere Itself.'
+    setup: 'The Only Thing Flat-Earthers Fear.....',
+    punchLine: 'Is Sphere Itself.'
   },
   {
-    name: 'Why is Peter Pan always flying?',
-    avatarUrl: 'He neverlands.'
+    setup: 'Why is Peter Pan always flying?',
+    punchLine: 'He neverlands.'
   }
 ];
 
@@ -35,9 +35,9 @@ router.get('/', function(req, res) {
   res.sendFile('index.html', { root: 'public' });
 });
 
-router.get('/pokemon', function(req, res) {
-  console.log("In Pokemon");
-  res.send(pokemon);
+router.get('/joke', function(req, res) {
+  console.log("In joke");
+  res.send(jokes);
 });
 
 var politics = "https://zlzlap7j50.execute-api.us-east-1.amazonaws.com/prod";
